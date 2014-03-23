@@ -1,0 +1,32 @@
+<h1>Packages#index</h1>
+
+<% if @customerModel.errors.any? %>
+    <h2>The information contains the following errors:<h2>
+    <ul>
+    <% @customerModel.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>  
+
+<% if @packageModel.errors.any? %>
+    <h2>The information contains the following errors:<h2>
+    <ul>
+    <% @packageModel.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_for :package do |package_form| %>
+  Package type: <%= package_form.select :package_type, ["Sobre", "Caja pequeña", "Caja mediana", "Caja grande"] %> <br>
+  Addressee: <%= package_form.text_field :addressee %> <br>
+  Hour: <%=  package_form.select :hour, ["04:00","06:00","08:00", "10:00", "12:00", "14:00", "16:00", "18:00"] %> <br><br>
+
+  Identity number: <%= package_form.text_field :identity %> <br>
+  Name: <%= package_form.text_field :name %><br>
+  Surname: <%= package_form.text_field :surname %> <br>
+  Gender: <%= package_form.select :gender, ["M", "F"] %>
+
+  <br><br><%= package_form.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>EmployeeOptions#index</h1>
+
+<h2> Operations: </h2>
+
+<ul>
+  <li> <%= link_to "Ticket", "tickets" %> </li>
+  <% if @employeeModel.employee_type == "Administrador" %>
+    <li> <%= link_to "New employee", "create_employees" %> </li>
+  <% end %>
+  <li> <%= link_to "Package", "packages" %> </li>
+</ul>

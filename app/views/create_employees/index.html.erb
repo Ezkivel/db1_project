@@ -1,0 +1,24 @@
+<h1>CreateEmployees#index</h1>
+
+<% if @newEmployeeModel.errors.any? %>
+    <h2>The information contains the following errors:<h2>
+    <ul>
+    <% @newEmployeeModel.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_for :new_employee do |employee_form| %>
+  Identidad: <%= employee_form.text_field :identity %> <br>
+  Name: <%= employee_form.text_field :name %> <br>
+  Surname: <%= employee_form.text_field :surname %> <br>
+  Age: <%= employee_form.text_field :age %> <br>
+  Gender: <%= employee_form.select :gender, ["M", "F"] %> <br>
+  Employee type: <%= employee_form.select :employee_type, ["Normal", "Administrador"] %> <br>
+  Email: <%= employee_form.text_field :email %> <br>
+  Password: <%= employee_form.password_field :password %> <br>
+  Station: <%= employee_form.collection_select(:station_id, Station.all, :id, :name) %>
+
+  <br><br><%= employee_form.submit %>
+<% end %>

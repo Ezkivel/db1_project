@@ -1,0 +1,25 @@
+<h1>Tickets</h1>
+
+<% if @customerModel.errors.any? %>
+    <h2>The information contains the following errors:<h2>
+    <ul>
+    <% @customerModel.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_for :ticket do |ticket_form| %>
+  Station: <%= ticket_form.collection_select(:station, Station.all, :id, :name) %> <br>
+  Reservation for within <%= ticket_form.select :days, ["0","1","2", "3", "4", "5"] %> days <br>
+  Hour: <%=  ticket_form.select :hour, ["04:00","06:00","08:00", "10:00", "12:00", "14:00", "16:00", "18:00"] %> <br>
+  Seat number: <%= ticket_form.select :seat, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"] %> <br>
+  Ticket type: <%= ticket_form.select :ticket_type, ["Normal", "Senior", "Student"] %> <br><br>
+
+  Identity number: <%= ticket_form.text_field :identity %> <br>
+  Name: <%= ticket_form.text_field :name %><br>
+  Surname: <%= ticket_form.text_field :surname %> <br>
+  Gender: <%= ticket_form.select :gender, ["M", "F"] %>
+
+  <br><br><%= ticket_form.submit %>
+<% end %>
