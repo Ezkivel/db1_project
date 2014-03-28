@@ -1,0 +1,18 @@
+<h1 id="title">Report - Customers</h1>
+<table>
+  <tr>
+    <th>Identity</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Gender</th>
+  </tr>
+ 
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.identity %></td>
+      <td><%= customer.name %></td>
+      <td><%= customer.surname %></td>
+      <td><%= customer.gender %></td>
+    </tr>
+  <% end %>
+</table>

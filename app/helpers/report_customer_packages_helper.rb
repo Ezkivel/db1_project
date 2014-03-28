@@ -1,0 +1,2 @@
+module ReportCustomerPackagesHelper
+end

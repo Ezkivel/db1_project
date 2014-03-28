@@ -1,0 +1,30 @@
+// Place all the styles related to the contact controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#title
+{
+  text-align: center;
+  font: 20px/1 Lobster,Arial,sans-serif;
+  font-size: 2em;
+}
+
+div.contact
+{
+  display: block;
+  margin-left: auto;
+	margin-right: auto;
+  
+  width:400px;
+  height:250px;
+  //margin:30px 50px;
+  background-color:#ffffff;
+  border:1px solid black;
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+div.contact p
+{
+  margin:30px 40px;
+  font-weight:bold;
+  color:#000000;
+}

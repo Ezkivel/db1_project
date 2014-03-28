@@ -106,6 +106,11 @@ class PackagesController < ApplicationController
     packageType = params[:package][:package_type]
     addressee = params[:package][:addressee]
     
+    if addressee.blank?
+      render 'index' #actualizamos la pagina y mostramos el problema
+      return
+    end
+    
     total = 40 #valor del sobre
     
     if packageType == "Caja pequeña"
@@ -128,5 +133,6 @@ class PackagesController < ApplicationController
   end
 
   def show
+    @packageModel = Package.last
   end
 end

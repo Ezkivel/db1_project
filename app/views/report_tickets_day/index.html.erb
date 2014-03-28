@@ -1,0 +1,14 @@
+<h1 id="title">Report - Tickets by Day</h1>
+
+<div id="report_tickets_day">
+  <%= form_tag({:action=>"show"}, method: :get) do %>
+  Day:
+  <%= text_field_tag :day %> <br><br>
+  Month:
+  <%= text_field_tag :month %> <br><br>
+  Year:
+  <%= text_field_tag :year %> <br><br>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+</div>
+

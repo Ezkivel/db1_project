@@ -1,0 +1,30 @@
+<h1 id="title">Result</h1>
+
+<center><%= @packages.count %> packages </center><br>
+<center>Total: <%= @packages.sum(&:total) %> </center><br>
+
+<table>
+  <tr>
+    <th>Customer identity</th>
+    <th>Customer name</th>
+    <th>Type</th>
+    <th>Addressee</th>
+    <th>Total</th>
+    <th>Hour</th>
+    <th>Destination</th>
+    <th>Bus</th>
+  </tr>
+ 
+  <% @packages.each do |package| %>
+    <tr>
+      <td><%= package.customer.identity %></td>
+      <td><%= package.customer.name %></td>
+      <td><%= package.package_type %></td>
+      <td><%= package.addressee %></td>
+      <td><%= package.total %></td>
+      <td><%= package.hour.hour %></td>
+      <td><%= package.hour.destination %></td>
+      <td><%= package.hour.bus_id %></td>
+    </tr>
+  <% end %>
+</table>

@@ -5,15 +5,36 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  
+  <!-- Our CSS stylesheet file -->
+        <link rel="stylesheet" href="assets/css/styles.css" />
+
+        <!-- Including the Lobster font from Google's Font Directory -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
 </head>
+  
 <body>
   
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Login", "users/sign_in" %>
-<% end %>
+<header>
+  <h1 id="company"> La Blanquita Express </h1>
+  
+  <% if user_signed_in? %>
+    <h3><center> Logged in as <strong><%= current_user.email %></strong>. <%= link_to "Logout", destroy_user_session_path, method: :delete %> </center></h3>
+  <% else %>
+    <h3><center> Not logged in </center></h3>
+  <% end %>
+</header>
+
+<nav class="nav">
+  <ul class="fancyNav">
+    <li id="home"><a href="main" class="homeIcon">Home</a></li>
+    <li id="news"> <%= link_to "Tickets Online", "tickets_online" %> </li>
+    <li id="about"> <%= link_to "Log in", "users/sign_in" %> </li>
+    <li id="about"> <%= link_to "Customer", "employee_options" %> </li>
+    <li id="services"><a href="about">About</a></li>
+    <li id="contact"><a href="contact">Contact us</a></li>
+  </ul>
+</nav>
 
 <% if notice %>
   <p class="alert alert-notice"><%= notice %></p>

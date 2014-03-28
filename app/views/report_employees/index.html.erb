@@ -1,0 +1,23 @@
+<h1 id="title">Report - Employees</h1>
+
+<table>
+  <tr>
+    <th>Identity</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Gender</th>
+    <th>Type</th>
+    <th>Station</th>
+  </tr>
+ 
+  <% @employees.each do |employee| %>
+    <tr>
+      <td><%= employee.identity %></td>
+      <td><%= employee.name %></td>
+      <td><%= employee.surname %></td>
+      <td><%= employee.gender %></td>
+      <td><%= employee.employee_type %></td>
+      <td><%= employee.station.name %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,2 +1,14 @@
-<h1>Packages#show</h1>
-<p>Find me in app/views/packages/show.html.erb</p>
+<h2 id="title">Package information</h2>
+
+<div id="package_information">
+  <p>Package id: <%= @packageModel.id %></p> 
+  <br>
+
+  <p>Package type: <%= @packageModel.package_type %></p> 
+  <br>
+
+  <p>Addressee: <%= @packageModel.addressee %> Lp</p> 
+  <br>
+
+  <p>Total: <%= @packageModel.total %> </p> 
+</div>

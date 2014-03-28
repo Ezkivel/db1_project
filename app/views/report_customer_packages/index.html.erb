@@ -1,0 +1,9 @@
+<h1 id="title">Report - Customer Packages</h1>
+
+<div id="report_customer_packages">
+  <%= form_tag({:action=>"show"}, method: :get) do %>
+    Identity:
+    <%= text_field_tag :customer_id %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>
+</div>

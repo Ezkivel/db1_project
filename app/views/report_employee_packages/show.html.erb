@@ -1,0 +1,25 @@
+<h1 id="title">Result</h1>
+
+<p><center> Name: <%= @employee.name %> Surname: <%= @employee.name %> Type: <%= @employee.employee_type %> </center></p>
+
+<table>
+  <tr>
+    <th>Customer Identity</th>
+    <th>Customer Name</th>
+    <th>Total</th>
+    <th>Hour</th>
+    <th>Destination</th>
+    <th>Bus</th>
+  </tr>
+ 
+  <% @employeePackages.each do |package| %>
+    <tr>
+      <td><%= package.customer.identity %></td>
+      <td><%= package.customer.name %></td>
+      <td><%= package.total %></td>
+      <td><%= package.hour.hour %></td>
+      <td><%= package.hour.destination %></td>
+      <td><%= package.hour.bus_id %></td>
+    </tr>
+  <% end %>
+</table>

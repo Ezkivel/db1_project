@@ -1,0 +1,25 @@
+<h1 id="title">Result</h1>
+
+<p><center>Name: <%= @customer.name %> Surname: <%= @customer.surname %> </center></p>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Addressee</th>
+    <th>Total</th>
+    <th>Hour</th>
+    <th>Destination</th>
+    <th>Bus</th>
+  </tr>
+ 
+  <% @customerPackages.each do |package| %>
+    <tr>
+      <td><%= package.package_type %></td>
+      <td><%= package.addressee %></td>
+      <td><%= package.total %></td>
+      <td><%= package.hour.hour %></td>
+      <td><%= package.hour.destination %></td>
+      <td><%= package.hour.bus_id %></td>
+    </tr>
+  <% end %>
+</table>

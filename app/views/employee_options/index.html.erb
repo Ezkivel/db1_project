@@ -1,11 +1,33 @@
-<h1>EmployeeOptions#index</h1>
+<h2 id="title">Employee Options</h1>
 
-<h2> Operations: </h2>
-
-<ul>
-  <li> <%= link_to "Ticket", "tickets" %> </li>
-  <% if @employeeModel.employee_type == "Administrador" %>
+<div id="employee_options">
+  <ul>
+    <li> <%= link_to "Ticket", "tickets" %> </li>
+    <li> <%= link_to "Package", "packages" %> </li>
+    <% if @employeeModel.employee_type == "Administrador" %>
     <li> <%= link_to "New employee", "create_employees" %> </li>
-  <% end %>
-  <li> <%= link_to "Package", "packages" %> </li>
-</ul>
+    <% end %>
+    <li> Reports (Customer)
+      <ul>
+        <li> <%= link_to "Show customers", "report_customers" %> </li>
+        <li> <%= link_to "Tickets detail by customer", "report_customer_tickets" %> </li>
+        <li> <%= link_to "Packages detail by customer", "report_customer_packages" %> </li>
+      </ul>
+    </li>
+    <li> Reports (Employee)
+      <ul>
+        <li> <%= link_to "Show employees", "report_employees" %> </li>
+        <li> <%= link_to "Tickets detail by employee", "report_employee_tickets" %> </li>
+        <li> <%= link_to "Packages detail by employee", "report_employee_packages" %> </li>
+      </ul>
+    </li>
+    <li> Reports (General)
+      <ul>
+        <li> <%= link_to "Tickets by month", "report_tickets_month" %> </li>
+        <li> <%= link_to "Tickets by day", "report_tickets_day" %> </li>
+        <li> <%= link_to "Packages by month", "report_packages_month" %> </li>
+        <li> <%= link_to "Packages by day", "report_packages_day" %> </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,57 @@
+// Place all the styles related to the report_packages_month controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#title
+{
+  text-align: center;
+  font: 20px/1 Lobster,Arial,sans-serif;
+  font-size: 2em;
+}
+
+#report_packages_month
+{
+  //text-align: center;
+  
+  margin-left: auto;
+	margin-right: auto;
+    
+  border-radius: 5px;
+	border: 2px solid #6495ED;
+	background-color: #3269A3;
+	height: 150px;
+	width: 300px;
+	margin: auto;
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+	-moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+	-o-box-shadow: 0 10px 6px -6px #777;
+	-ms-box-shadow: 0 10px 6px -6px #777;
+	box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+}
+
+table
+{
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+table, th, td
+{
+  border-collapse:collapse;
+  border:2px solid gray;
+}
+
+th, td
+{
+  padding:15px;
+}
+
+th
+{
+  background-color:skyblue;
+  color:black;
+}
+
+td
+{
+  color:white
+}

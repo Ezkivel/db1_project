@@ -1,0 +1,32 @@
+<h1 id="title">Result</h1>
+
+<center><%= @tickets.count %> tickets </center><br>
+<center>Total: <%= @tickets.sum(&:total) %> </center><br>
+
+<table>
+  <tr>
+    <th>Customer identity</th>
+    <th>Customer name</th>
+    <th>Seat</th>
+    <th>Type</th>
+    <th>Discount</th>
+    <th>Total</th>
+    <th>Hour</th>
+    <th>Destination</th>
+    <th>Bus</th>
+  </tr>
+ 
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.customer.identity %></td>
+      <td><%= ticket.customer.name %></td>
+      <td><%= ticket.seat %></td>
+      <td><%= ticket.ticket_type %></td>
+      <td><%= ticket.discount %></td>
+      <td><%= ticket.total %></td>
+      <td><%= ticket.hour.hour %></td>
+      <td><%= ticket.hour.destination %></td>
+      <td><%= ticket.hour.bus_id %></td>
+    </tr>
+  <% end %>
+</table>

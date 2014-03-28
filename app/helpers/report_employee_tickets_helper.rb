@@ -1,0 +1,2 @@
+module ReportEmployeeTicketsHelper
+end

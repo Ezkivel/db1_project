@@ -1,0 +1,37 @@
+// Place all the styles related to the report_employees controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#title
+{
+  text-align: center;
+  font: 20px/1 Lobster,Arial,sans-serif;
+  font-size: 2em;
+}
+
+table
+{
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+table, th, td
+{
+  border-collapse:collapse;
+  border:2px solid gray;
+}
+
+th, td
+{
+  padding:15px;
+}
+
+th
+{
+  background-color:skyblue;
+  color:black;
+}
+
+td
+{
+  color:white
+}

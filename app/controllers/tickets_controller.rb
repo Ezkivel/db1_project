@@ -24,7 +24,7 @@ class TicketsController < ApplicationController
     min = hour.split(':')[1].strip
     
     #fecha de salida para el boleto
-    checkOutTime = DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, h.to_i, min.to_i, 0).in_time_zone + days.to_i.days
+    checkOutTime = DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day, h.to_i, min.to_i, 0, 0).in_time_zone + days.to_i.days
     
     destination = 'Choluteca'
 
@@ -83,26 +83,14 @@ class TicketsController < ApplicationController
       busId = 2
     end
     
-    selectedHourModel = Hour.where(hour: checkOutTime, destination: destination, bus_id: busId).take    
-    #Verificamos si existe una hora(fecha) con el bus correspondiente
-    if !selectedHourModel.blank?
-      #Verificamos si a esa hora|bus no hay asientos disponibles
+    #Verificamos si a esa hora|bus no hay asientos disponibles
       if Hour.where(hour: checkOutTime, destination: destination, bus_id: busId).count >= 40
         flash[:notice] = "No seats availables."
         redirect_to action: 'index'
         return
       end
-      
-      seatTemp = params[:ticket][:seat]      
-      #Verificamos si existe un boleto con el mismo asiento para la misma fecha(hora)
-      if Ticket.exists?(seat: seatTemp, hour: selectedHourModel)
-        flash[:notice] = "The seat is not available."
-        redirect_to action: 'index'
-        return
-      end
-    end
             
-    hourModel = Hour.new(hour: checkOutTime, destination: destination, bus_id: busId)
+    hourModel = Hour.create(hour: checkOutTime, destination: destination, bus_id: busId)
     
     #---------------------------------------Cliente y Empleado------------------------------------------
         
@@ -118,15 +106,6 @@ class TicketsController < ApplicationController
       end
     else #de lo contrario, obtemos el cliente
       @customerModel = Customer.find_by(identity: @customerModel.identity)
-      
-      #Verificamos si el cliente ya habia comprado un boleto para esa fecha(hora)
-      if !Ticket.exists?(customer: @customerModel, hour: selectedHourModel)
-        hourModel.save #Guardamos la hora
-      else
-        flash[:notice] = "You already reserved a ticket."
-        redirect_to action: 'index'
-        return
-      end
     end
     
     #Obtenemos el empleado

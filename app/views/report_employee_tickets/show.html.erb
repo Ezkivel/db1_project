@@ -1,0 +1,25 @@
+<h1 id="title">Result</h1>
+
+<p><center> Name: <%= @employee.name %> Surname: <%= @employee.name %> Type: <%= @employee.employee_type %> </center></p>
+
+<table>
+  <tr>
+    <th>Customer Identity</th>
+    <th>Customer Name</th>
+    <th>Total</th>
+    <th>Hour</th>
+    <th>Destination</th>
+    <th>Bus</th>
+  </tr>
+ 
+  <% @employeeTickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.customer.identity %></td>
+      <td><%= ticket.customer.name %></td>
+      <td><%= ticket.total %></td>
+      <td><%= ticket.hour.hour %></td>
+      <td><%= ticket.hour.destination %></td>
+      <td><%= ticket.hour.bus_id %></td>
+    </tr>
+  <% end %>
+</table>

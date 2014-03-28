@@ -7,8 +7,24 @@ Project::Application.routes.draw do
   resources :employee_options
   resources :create_employees
   resources :packages
+  resources :report_customers
+  resources :report_customer_tickets
+  resources :report_customer_packages
+  resources :report_employees
+  resources :report_employee_tickets
+  resources :report_employee_packages
+  resources :report_tickets_month
+  resources :report_tickets_day
+  resources :report_packages_month
+  resources :report_packages_day
+  resources :about
+  resources :contact
   
   get "main/index"
+  
+  get "about/index"
+  
+  get "contact/index"
   
   get "tickets_online/index"
   get "tickets_online/show"
@@ -23,6 +39,34 @@ Project::Application.routes.draw do
   
   get "packages/index"
   get "packages/show"
+  
+  get "report_customers/index"
+  
+  get "report_customer_tickets/index"
+  get "report_customer_tickets/show"
+  
+  get "report_customer_packages/index"
+  get "report_customer_packages/show"
+  
+  get "report_employees/index"
+  
+  get "report_employee_tickets/index"
+  get "report_employee_tickets/show"
+  
+  get "report_employee_packages/index"
+  get "report_employee_packages/show"
+  
+  get "report_tickets_month/index"
+  get "report_tickets_month/show"
+  
+  get "report_tickets_day/index"
+  get "report_tickets_day/show"
+  
+  get "report_packages_month/index"
+  get "report_packages_month/show"
+  
+  get "report_packages_day/index"
+  get "report_packages_day/show"
   
   root 'main#index'
   # The priority is based upon order of creation: first created -> highest priority.

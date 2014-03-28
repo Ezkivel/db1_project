@@ -1,0 +1,10 @@
+<h1 id="title">Report - Employee Tickets</h1>
+
+<div id="report_employee_tickets">
+  <%= form_tag({:action=>"show"}, method: :get) do %>
+    Identity:
+    <%= text_field_tag :employee_id %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>
+</div>
+
